@@ -1,83 +1,119 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Baloo Bhaijaan 2", sans-serif;
-  font-optical-sizing: auto;
-  
+    font-optical-sizing: auto;
 }
 
-.navbar{
-    height: 80px;
-    
+.navbar {
+    height: auto;
+    min-height: 80px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 0 45px;
+    padding: 15px 25px;
     box-shadow: 1px 1px 5px rgb(112, 112, 112);
+    align-items: center;
+    gap: 15px;
 }
 
-.navbar .left{
-   
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.navbar .left img{
-    
-    height: 70px;
-}
-
-.navbar .right{
-   
+.navbar .left {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .left img {
+    height: 70px;
+    max-width: 100%;
+}
+
+.navbar .right {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 15px;
     align-items: center;
     font-size: 18px;
     font-weight: 700;
     color: #214184;
- }
+}
 
- .navbar .right div{
+.navbar .right div {
     color: #214184;
- }
-
-
- .navbar .right div i{
-      transform: rotate(-45deg);
- } 
-
-a{
-    text-decoration: none;
+    padding: 5px 10px;
 }
 
-.section1{
-    padding: 30px;
-}
-.section1 .heading{
-    font-size: 35px;
-    font-weight: 700;
-    color: #214184;
-}
-
-
-.section1 .list{
-    font-size: 18px;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-.section1 .list i{
+.navbar .right div i {
     transform: rotate(-45deg);
 }
 
-.footer{
-     margin: 20px;
+a {
+    text-decoration: none;
+}
+
+.section1 {
+    padding: 20px;
+}
+
+.section1 .heading {
+    font-size: clamp(24px, 5vw, 35px);
+    font-weight: 700;
+    color: #214184;
+    margin: 20px 0 15px;
+}
+
+.section1 .list {
+    font-size: 16px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.section1 .list ol {
+    padding-left: 20px;
+}
+
+.section1 .list li {
+    margin-bottom: 10px;
+}
+
+.section1 .list i {
+    transform: rotate(-45deg);
+}
+
+.footer {
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     text-align: center;
     font-weight: 700;
     color: #22b24c;
+    font-size: clamp(12px, 3vw, 16px);
+    padding: 0 15px;
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        padding: 0 45px;
+        height: 80px;
+    }
+    
+    .section1 {
+        padding: 30px;
+    }
+    
+    .section1 .list {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section1 {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
